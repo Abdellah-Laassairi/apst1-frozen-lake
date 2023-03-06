@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 ``` 
 
-The main script to launc the simulation is :
+The `notebook.ipynb` file contains the steps of our experiments. The main script to launc the simulation is :
 
 ```bash
 python3 main.py 
