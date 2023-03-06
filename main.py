@@ -2,8 +2,10 @@
 import gymnasium as gym
 import pygame
 import sys
+import argparse
 
-def main():
+
+def main(env, method):
     """
     main function to launch reinforcement learning agent
     """
@@ -25,4 +27,25 @@ def main():
 
             
 if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--method",
+        dest="method",
+        type=str,
+        default="q-learning",
+        help=
+        "options : q-learning, SARSA"
+    )
+    parser.add_argument(
+        "--env",
+        dest="env",
+        type=str,
+        default="frozen_lake",
+        help="options : frozen_lake, acrobot")
+    
+    args = parser.parse_args()
+
+
     main()
