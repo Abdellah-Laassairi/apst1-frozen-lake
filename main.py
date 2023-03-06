@@ -6,11 +6,12 @@ import argparse
 from tools.qlearning import *
 from tools.sarsa import *
 
-def main(env, learning_method, save):
+def main(env, learning_method, save, visualize):
     """
     main function to launch reinforcement learning agent
     """
 
+    # Environment selection
     if env == 'CartPole-v0':
         env = gym.make("CartPole-v0", render_mode="human")
         observation, info = env.reset(seed=42)
@@ -18,6 +19,8 @@ def main(env, learning_method, save):
         env = gym.make("FrozenLake-v1", render_mode="human")
         observation, info = env.reset(seed=42)
 
+
+    # Learning method selection
     if learning_method == 'QLearning':
         q_table = q_train_greedy(env, weights="data/q_table.npy")
         if save :
@@ -56,5 +59,12 @@ if __name__ == '__main__':
         help="Save the trained model or weights")
     args = parser.parse_args()
 
+    parser.add_argument(
+        "--visualize",
+        dest="visualize",
+        type=bool,
+        default=False,
+        help="Visualize and render the environment")
+    args = parser.parse_args()
 
-    main(args.env, args.method, args.save)
+    main(args.env, args.method, args.save, args.visualize)
