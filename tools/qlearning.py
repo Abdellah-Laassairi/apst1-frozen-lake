@@ -3,7 +3,7 @@ import numpy as np
 from tqdm import *
 
 
-def q_train_greedy(env, alpha=0.9, gamma=0.95, max_epsilon=1, epsilon=0.01, max_n_steps=100, n_episodes=10, weights="data/q_table.npy"):
+def q_train_greedy(env, alpha=0.9, gamma=0.95, max_epsilon=1, epsilon=0.01, max_n_steps=100, n_episodes=30000, weights="data/q_table.npy"):
     """ Q–learning algorithm (epsilon-greedy)
     
     """
