@@ -12,5 +12,14 @@ The main script to launc the simulation is :
 ```bash
 python3 main.py 
 ``` 
-## 1st Project : Frozen Lake 
+To exit the simulation press the `ESCAPE` key repeatedly
+
+## 1st Environment : Frozen Lake 
+
+### 1. Q-Learning
+
+### 2. SARSA
+
+
+## 2nd Environment : Acrobat
 
