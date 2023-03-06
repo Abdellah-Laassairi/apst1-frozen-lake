@@ -15,7 +15,7 @@ python3 main.py
 To exit the simulation press the `ESCAPE` key repeatedly
 
 ## 1st Environment : Frozen Lake 
-
+![ Frozen lake](images/frozen_lake.gif) 
 ### 1. Q-Learning
 
 ### 2. SARSA
