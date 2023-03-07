@@ -26,7 +26,7 @@ def main(env, learning_method, save, visualize):
 
     # Learning method selection
     if learning_method == 'QLearning':
-        q_table = q_train_greedy(env, weights="data/q_table.npy")
+        q_table = q_train_greedy(env, weights=None)
         if save :
             np.save("data/q_table", q_table)
 
@@ -66,7 +66,7 @@ if __name__ == '__main__':
         "--visualize",
         dest="visualize",
         type=bool,
-        default=False,
+        default=True,
         help="Visualize and render the environment")
     
     args = parser.parse_args()
