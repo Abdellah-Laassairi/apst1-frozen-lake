@@ -30,4 +30,5 @@ To tackle the problem we will implement two different methods :
 
 
 ## 2nd Environment : Acrobat
+![ Acrobat](images/acrobot.gif) 
 
