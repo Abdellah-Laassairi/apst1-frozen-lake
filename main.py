@@ -16,10 +16,10 @@ def main(env, learning_method, save, visualize):
     else :
         render_mode = None
     # Environment selection
-    if env == 'CartPole-v0':
-        env = gym.make("CartPole-v0", render_mode=render_mode)
+    if env == 'Acrobot':
+        env = gym.make("Acrobot-v1", render_mode=render_mode)
         observation, info = env.reset(seed=42)
-    elif env == 'frozen_lake':
+    elif env == 'Frozen_lake':
         env = gym.make("FrozenLake-v1", render_mode=render_mode)
         observation, info = env.reset(seed=42)
 
