@@ -36,7 +36,7 @@ def main(env_name, mode, learning_method, save, visualize):
                 np.save("data/"+env_name+"_"+learning_method, q_table)
 
         elif learning_method == 'SARSA':
-            sarsa = sarsa_train(env)
+            sarsa = sarsa_table = sarsa_train(env, alpha = 0.1, gamma = 0.99, epsilon = 0.1, episodes = 10000, steps = 100)
             if save :
                 np.save("data/"+env_name+"_"+learning_method, sarsa)
     

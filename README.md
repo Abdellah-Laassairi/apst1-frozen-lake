@@ -23,11 +23,6 @@ This environment is part of the Toy Text environments, full documentation is ava
 - The player can make a move until they either reach the goal or fall in a hole.
 - The lake is slippery by default o the player may move perpendicular to the intended direction sometimes (see `is_slippery`). Furthermore, randomly generated worlds will always have a path to the goal.
 
-To tackle the problem we will implement two different methods : 
-
-### 1. Q-Learning
-### 2. SARSA
-
 
 ## 2nd Environment : Acrobat
 ![ Acrobat](images/acrobot.gif) 
