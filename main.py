@@ -5,6 +5,7 @@ import sys
 import argparse
 from tools.qlearning import *
 from tools.sarsa import *
+from tools.reinforce import *
 
 def main(env_name, mode, learning_method, save, visualize):
     """
@@ -36,17 +37,28 @@ def main(env_name, mode, learning_method, save, visualize):
                 np.save("data/"+env_name+"_"+learning_method, q_table)
 
         elif learning_method == 'SARSA':
-            sarsa = sarsa_table = sarsa_train(env, alpha = 0.1, gamma = 0.99, epsilon = 0.1, episodes = 10000, steps = 100)
+            sarsa = sarsa_train(env, alpha = 0.1, gamma = 0.99, epsilon = 0.1, episodes = 10000, steps = 100)
             if save :
                 np.save("data/"+env_name+"_"+learning_method, sarsa)
+        
+        elif learning_method == "REINFORCE":
+            params = REINFORCE(env)
+            if save :
+                np.save("data/"+env_name+"_"+learning_method, params)
     
-    elif mode=="Play":
+    elif mode=="Play" and learning_method == "REINFORCE":
+        try :
+            params = np.load("data/"+env_name+"_"+learning_method+".npy")
+            rewards, num_steps = agent_play_r(env, params)
+        except :
+            print("Train the Agent using this method first")
+
+    else : 
         try :
             table = np.load("data/"+env_name+"_"+learning_method+".npy")
             rewards, success_rate, avg_num_steps= agent_play(env, q_table=table)
         except :
             print("Train the Agent using this method first")
-
 
 
             
@@ -75,8 +87,8 @@ if __name__ == '__main__':
         "--env_name",
         dest="env_name",
         type=str,
-        default="frozen_lake",
-        help="options : frozen_lake, acrobot")
+        default="Frozen_lake",
+        help="options : Frozen_lake, Acrobot")
     
     parser.add_argument(
         "--save",
@@ -97,10 +109,17 @@ if __name__ == '__main__':
     main(args.env_name, args.mode, args.method, args.save, args.visualize)
 
     """ 
+
+    Frozen environment:
+
     Training example :
-    python3 main.py --env_name Frozen_lake --mode Train --method Qlearning --save 
+    python3 main.py --env_name Frozen_lake --mode Train --method Qlearning --save True
 
     Simulation example :
     python3 main.py --env_name Frozen_lake --mode Play --method Qlearning --visualize True 
+
+    Acrobat environment:
+    python3 main.py --env_name Acrobot --mode Train --method REINFORCE --save True
+    python3 main.py --env_name Acrobot --mode Play --method REINFORCE --visualize True 
 
     """
