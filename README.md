@@ -7,12 +7,26 @@ pip install -r requirements.txt
 
 ``` 
 
-The `frozen_lake.ipynb` file contains the steps of our experiments for the frozen lake part. The main script to launch the simulation is :
+The `frozen_lake.ipynb` file contains the steps of our experiments for the frozen lake part. The `acrobot.ipynb` file contains the coressponding experiments and results for the Acrobot envirement.
+
+
+ The main script to launch the simulation `main.py` here an example of how to launch it :
 
 ```bash
 python3 main.py 
+    --mode Train
+    --methode Qlearning
+    --env_name Frozen_lake
+    --save True
 ``` 
-To exit the simulation press the `ESCAPE` key repeatedly
+
+- mode : Set the mode of execution to either "Training" or "Play". Default value is "Training".
+- method : Set the method to use for the RL algorithm. Available options are "Qlearning", "SARSA", and "REINFORCE". Default value is "Qlearning".
+- env_name : Set the name of the environment to use. Available options are "Frozen_lake" and "Acrobot". Default value is "Frozen_lake".
+- save : Specify whether to save the trained model or weights. Default value is True.
+- visualize : Specify whether to visualize and render the environment. Default value is False.
+
+To exit the simulation press the `CTRL + C` keys
 
 ## 1st Environment : Frozen Lake 
 ![ Frozen lake](images/frozen_lake.gif) 
@@ -27,3 +41,4 @@ This environment is part of the Toy Text environments, full documentation is ava
 ## 2nd Environment : Acrobat
 ![ Acrobat](images/acrobot.gif) 
 
+The Acrobot environment in Gym is a reinforcement learning problem full documentation can be accessed [here](https://www.gymlibrary.dev/environments/classic_control/acrobot/). The system consists of a two-link chain connected linearly, with one end of the chain fixed, and the joint between the two links actuated. The objective is to apply torque to the actuated joint to swing the free end of the chain above a specified height, starting from the initial state of the chain hanging downwards.
