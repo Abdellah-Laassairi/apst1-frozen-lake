@@ -20,11 +20,11 @@ python3 main.py
     --save True
 ``` 
 
-- mode : Set the mode of execution to either "Training" or "Play". Default value is "Training".
+- mode : Set the mode of execution to either `Train` or `Play`. Default value is `Train`.
 - method : Set the method to use for the RL algorithm. Available options are "Qlearning", "SARSA", and "REINFORCE". Default value is "Qlearning".
-- env_name : Set the name of the environment to use. Available options are "Frozen_lake" and "Acrobot". Default value is "Frozen_lake".
-- save : Specify whether to save the trained model or weights. Default value is True.
-- visualize : Specify whether to visualize and render the environment. Default value is False.
+- env_name : Set the name of the environment to use. Available options are `Frozen_lake` and `Acrobot`. Default value is "`Frozen_lake`.
+- save : Specify whether to save the trained model or weights. Default value is `True`.
+- visualize : Specify whether to visualize and render the environment. Default value is `False`.
 
 To exit the simulation press the `CTRL + C` keys
 
