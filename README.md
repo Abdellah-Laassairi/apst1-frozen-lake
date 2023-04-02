@@ -10,7 +10,7 @@ pip install -r requirements.txt
 The `frozen_lake.ipynb` file contains the steps of our experiments for the frozen lake part. The `acrobot.ipynb` file contains the coressponding experiments and results for the Acrobot envirement.
 
 
- The main script to launch the simulation `main.py` here an example of how to launch it :
+ The main script to launch the simulation is `main.py` here is an example of how to launch it :
 
 ```bash
 python3 main.py 
@@ -22,7 +22,7 @@ python3 main.py
 
 - mode : Set the mode of execution to either `Train` or `Play`. Default value is `Train`.
 - method : Set the method to use for the RL algorithm. Available options are "Qlearning", "SARSA", and "REINFORCE". Default value is "Qlearning".
-- env_name : Set the name of the environment to use. Available options are `Frozen_lake` and `Acrobot`. Default value is "`Frozen_lake`.
+- env_name : Set the name of the environment to use. Available options are `Frozen_lake` and `Acrobot`. Default value is `Frozen_lake`.
 - save : Specify whether to save the trained model or weights. Default value is `True`.
 - visualize : Specify whether to visualize and render the environment. Default value is `False`.
 
